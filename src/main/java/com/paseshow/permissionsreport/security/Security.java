@@ -32,10 +32,10 @@ public class Security {
     @Bean
     SecurityWebFilterChain apiHttpSecurity(ServerHttpSecurity http) {
         return http
-                .cors().disable()
                 .authorizeExchange().anyExchange().permitAll()
                 .and()
                 .csrf().disable()
+                .formLogin().disable()
                 .build();
     }
 }
